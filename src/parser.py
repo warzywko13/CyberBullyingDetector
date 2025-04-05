@@ -20,10 +20,10 @@ def parser() -> argparse.Namespace:
     )
 
     parser.add_argument(
-        "--evaluate",
+        "--test",
         "-e",
         action="store_true",
-        help="Evaluate the model."
+        help="Test the model."
     )
 
     return parser.parse_args()
