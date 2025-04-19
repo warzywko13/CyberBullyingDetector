@@ -10,7 +10,6 @@ import stopwordsiso as stopwordsiso
 
 from src.filemanager import FileManager
 
-# @TODO
 class Graph:
     @staticmethod
     def count_graph(df):

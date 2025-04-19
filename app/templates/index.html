@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Komentarze{% endblock %}
+
+{% block content %}
+    <div class="container mt-2">
+        <h1 class="text-center">Dodaj komentarz</h1>
+
+        <textarea 
+            name="comment" 
+            id="comment"
+            class="form-control mt-4" 
+            rows="5"
+        ></textarea>
+
+        <button
+            class="btn btn-primary d-block mx-auto mt-4"
+        >Dodaj</button>
+
+        <div class="container my-3 py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 col-lg-10">
+                    <!-- Comments -->
+                    <h4>Komentarze:</h4>
+
+                    <div id="comments_container">
+                        {% for comment in comments %}
+                            {% include 'comments/comment.html' %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        const URLS = {
+            add_comment: "{% url 'add_comment' %}",
+        };
+    </script>
+    {% load static %}
+    <script src="{% static 'js/comments/index.js' %}"></script>
+{% endblock %}

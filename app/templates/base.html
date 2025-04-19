@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Default Title{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="bg-dark text-white">
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+    <nav class="navbar navbar-dark bg-dark border-bottom border-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">TOXIC DETECTOR</a>
+        
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a 
+                        class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" 
+                        href="{% url 'index' %}"
+                    >Komentarze</a>
+                </li>
+                <li class="nav-item">
+                    <a 
+                        class="nav-link {% if request.resolver_match.url_name == 'admin' %}active{% endif %}" 
+                        href="{% url 'admin' %}"
+                    >Panel administratora</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="alerts mt-3">
+            <div 
+                id="warning-comment" 
+                class="alert alert-warning d-none" 
+                role="alert"
+            ></div>
+
+            <div
+                id="success-comment"
+                class="alert alert-success d-none" 
+                role="alert"
+            ></div>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {% load static %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/loading.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/alerts/alerts.js' %}"></script>
+
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

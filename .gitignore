@@ -1,4 +1,6 @@
 data/preprocess/
 data/results/
 polish/
-src/__pycache__/
+db.sqlite3
+**/__pycache__/
+**.env
