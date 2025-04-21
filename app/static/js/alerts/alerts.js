@@ -1,5 +1,5 @@
 const resetAlerts = () => {
-    $('.alert alert').each(function(index, el) {
+    $('.alerts .alert').each(function(index, el) {
         $(el).addClass('d-none');
         $(el).text('');
     });

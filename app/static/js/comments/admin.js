@@ -43,7 +43,7 @@ const approveComment = (commentId) => {
         data: JSON.stringify({
             id: commentId
         }),
-        success: function({message}) {s
+        success: function({message}) {
             $(`#comment_${commentId}`).remove();
             showAlert(message, 'success');
 
