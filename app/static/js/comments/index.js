@@ -41,5 +41,5 @@ const addComment = () => {
 };
 
 $(document).ready(function() {
-    $('button').click(addComment);
+    $('#add_comment').on('click', addComment);
 });

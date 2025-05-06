@@ -16,19 +16,20 @@
             </div>
         </div>
 
-        {% if admin_panel %}
         <div class="mt-3">
-            <button 
-                data-id="{{ comment.id }}" 
-                class="accept btn btn-sm btn-success"
-            >Zatwierdź</button>
-
+            {% if admin_panel %}
+                <button 
+                    data-id="{{ comment.id }}" 
+                    class="accept btn btn-sm btn-success"
+                >Zatwierdź</button>
+            {% endif %}
+            
             <button
                 data-id="{{ comment.id }}"
                 class="deny btn btn-sm btn-danger"
             >Usuń</button>
         </div>
-        {% endif %}
+        
     </div>
 </div>
 
