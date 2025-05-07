@@ -25,7 +25,7 @@ def main() -> None:
 
     if args.test:
         evaluation = Evaluation(file_manager.results)
-        print(evaluation.predict("Chuj ci w dupe i na imie"))
+        print(evaluation.predict("Nienawidzę cię"))
 
 
 if __name__ == "__main__":
