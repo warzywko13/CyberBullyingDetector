@@ -59,12 +59,12 @@ const approveComment = (commentId) => {
 };
 
 $(document).ready(function() {
-    $('button.accept').click(function() {
+    $(document).on('click', 'button.accept', function() {
         const commentId = $(this).data('id');
         approveComment(commentId);
     });
 
-    $('button.deny').click(function() {
+    $(document).on('click', 'button.deny', function() {
         const commentId = $(this).data('id');
         denyComment(commentId);
     });
