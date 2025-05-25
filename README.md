@@ -25,3 +25,10 @@
 ```
     python manage.py runserver
 ```
+
+### Link do wytrenowanego modelu
+
+1. Należy pobrać model można używając linku:
+- https://drive.google.com/file/d/1R0zYdtKwA_M0jgN5v65E8AmpPnWqkxyb/view?usp=sharing
+
+2. Plik ".zip" należy wypakować do głównego folder aplikacji. Po wypadkowaniu pliki powinny znajdować się w folderze ```./data/results```
